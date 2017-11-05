@@ -5,7 +5,7 @@
  */
 
 import 'normalize.css';
-import './css/index.less';
+import './css/agents.less';
 import 'babel-polyfill';
 
 import PhysicalAgents from "./js/PhysicalAgents"; // PhysicalAgents class contains physical agents data and DOM operation methods
