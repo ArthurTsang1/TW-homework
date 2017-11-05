@@ -1,0 +1,83 @@
+// responsive grid system, same as Bootstrap's grid system
+
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+  &:after {
+    clear: both;
+  }
+}
+.container {
+  .container-fluid();
+  @media (min-width: 768px) {
+    width: 750px;
+  }
+  @media (min-width: 992px) {
+    width: 970px;
+  }
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
+}
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+  &:after {
+    clear: both;
+  }
+}
+.col(@size) {
+  .col(@sz, @n) {
+    .col-@{sz}-@{n} {
+      width: @n / 12 * 100%;
+      position: relative;
+      min-height: 1px;
+      padding-right: 15px;
+      padding-left: 15px;
+      float: left;
+    }
+    .col-@{sz}-pull-@{n} {
+      right: @n / 12 * 100%;
+    }
+    .col-@{sz}-push-@{n} {
+      left: @n / 12 * 100%;
+    }
+    .col-@{sz}-offset-@{n} {
+      margin-left: @n / 12 * 100%;
+    }
+  }
+  .col(@size, 1);
+  .col(@size, 2);
+  .col(@size, 3);
+  .col(@size, 4);
+  .col(@size, 5);
+  .col(@size, 6);
+  .col(@size, 7);
+  .col(@size, 8);
+  .col(@size, 9);
+  .col(@size, 10);
+  .col(@size, 11);
+  .col(@size, 12);
+}
+.col(xs);
+@media (min-width: 768px) {
+  .col(sm);
+}
+@media (min-width: 992px) {
+  .col(md);
+}
+@media (min-width: 1200px) {
+  .col(lg);
+}
